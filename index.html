@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Налоговый календарь клиентов</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+<link rel="stylesheet" href="styles.css">
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Налоговый календарь клиентов</h1>
+      <p class="subtitle">Что и когда сдавать по каждому клиенту · <span id="today"></span></p>
+    </div>
+    <div class="view-switch" role="tablist">
+      <button class="view-btn active" data-view="list" role="tab" aria-selected="true">По датам</button>
+      <button class="view-btn" data-view="matrix" role="tab" aria-selected="false">По месяцам</button>
+    </div>
+  </header>
+
+  <section class="tiles" id="tiles"></section>
+
+  <section class="filters">
+    <select id="f-client"><option value="">Все клиенты</option></select>
+    <select id="f-regime"><option value="">Все режимы</option></select>
+    <select id="f-status">
+      <option value="active">Активные</option>
+      <option value="">Все</option>
+      <option value="done">Выполнено</option>
+    </select>
+    <input id="f-search" type="search" placeholder="Поиск: НДС, НДФЛ, патент…">
+  </section>
+
+  <main id="content"></main>
+
+  <footer class="foot">
+    Данные обновляются через <code>data/data.js</code> · выполненные задачи хранятся локально в браузере
+  </footer>
+
+  <script src="data/data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
